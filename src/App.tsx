@@ -1,11 +1,13 @@
-import React from 'react';
-import Auth from './features/AuthLogin/index';
-// import logo from './logo.svg';
-// import './App.css';
+import { RouterProvider } from "react-router-dom";
+import router from "./routes";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (
-    <Auth />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   );
 }
 
