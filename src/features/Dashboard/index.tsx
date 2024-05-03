@@ -1,13 +1,17 @@
-// import Loader from '../../utils/Loader';
 import Navbar from "./Navbar";
+import SideBarComponent from "./SideBar";
 
-export default function Dashboard() {
+export default function Dashboard({ children }) {
   return (
     <div>
       <Navbar />
-      <div className="flex mt-[69px]">
-        <div className="w-1/4">Left panel</div>
-        <div className="w-3/4">Right Panel</div>
+      <div className="flex bg-slate-50 pt-14 h-screen">
+        <div className="">
+          <SideBarComponent />
+        </div>
+        <div className="w-full">
+          {children}
+        </div>
       </div>
     </div>
   );

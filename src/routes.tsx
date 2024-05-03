@@ -1,12 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import Auth from "./features/AuthLogin/index";
 import Dashboard from "./features/Dashboard";
+import Timeline from "./features/Timeline";
+import CreatePost from "./features/Post/CreatePostForm";
 import { ProtectedRoute } from "./utils/ProtectedRoute";
 
 const ProtectedRoutes = (Component) => {
   return (
     <ProtectedRoute>
-      <Component />
+      <Dashboard>
+        <Component />
+      </Dashboard>
     </ProtectedRoute>
   );
 };
@@ -18,7 +22,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: ProtectedRoutes(Dashboard),
+    element: ProtectedRoutes(Timeline),
+  },
+  {
+    path: "/dashboard/create-post",
+    element: ProtectedRoutes(CreatePost),
   },
 ]);
 

@@ -13,11 +13,18 @@
     "sourceMap": true,
     "noImplicitAny": false,
     "declaration": false,
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+		"paths": {
+			"@api/*": ["./api/*"],
+      "@features/*": ["./features/*"],
+      "@globalSlice/*": ["./globalSlice/*"],
+      "@utils/*": ["./utils/*"],
+		} 
   },
   "include": ["src"]
 }

@@ -13,7 +13,6 @@ export const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     if (!user) {
       fetchUserProfile().then((userData) => {
-        console.log('userData: ', userData);
         if (userData) {
           dispatch(setUser(userData));
         } else {
