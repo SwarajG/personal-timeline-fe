@@ -5,7 +5,7 @@ export default function Dashboard({ children }) {
   return (
     <div>
       <Navbar />
-      <div className="flex bg-slate-50 pt-14 h-screen">
+      <div className="flex bg-slate-50 pt-14 min-h-screen">
         <div className="">
           <SideBarComponent />
         </div>

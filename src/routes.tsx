@@ -5,11 +5,11 @@ import Timeline from "./features/Timeline";
 import CreatePost from "./features/Post/CreatePostForm";
 import { ProtectedRoute } from "./utils/ProtectedRoute";
 
-const ProtectedRoutes = (Component) => {
+const ProtectedRoutes = (element) => {
   return (
     <ProtectedRoute>
       <Dashboard>
-        <Component />
+        {element}
       </Dashboard>
     </ProtectedRoute>
   );
@@ -22,11 +22,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: ProtectedRoutes(Timeline),
-  },
-  {
-    path: "/dashboard/create-post",
-    element: ProtectedRoutes(CreatePost),
+    element: ProtectedRoutes(
+      <Timeline>
+        <CreatePost />
+      </Timeline>
+    ),
   },
 ]);
 

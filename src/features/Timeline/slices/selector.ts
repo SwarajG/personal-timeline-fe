@@ -1,0 +1,1 @@
+export const getPosts = (state) => state.app.timeline.post.postList;

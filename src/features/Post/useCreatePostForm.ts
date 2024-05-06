@@ -25,7 +25,7 @@ export default function useCreatePostForm() {
     form.append('media', uploadedFile);
     form.append('text', text);
     const userID = user.id;
-    const response = await createPost({ form, userID });
+    const response = await createPost(form);
     console.log('response: ', response);
   }
 

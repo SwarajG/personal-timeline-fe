@@ -26,8 +26,10 @@ export default function GoogleLogin() {
   useEffect(() => {
     setIsLoading(true);
     fetchUserProfile().then((user) => {
-      dispatch(setUser(user));
-      navigate("/dashboard");
+      if (user) {
+        dispatch(setUser(user));
+        navigate("/dashboard");
+      }
     });
   }, [dispatch, navigate]);
 

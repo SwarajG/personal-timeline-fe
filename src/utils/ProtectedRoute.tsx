@@ -16,7 +16,7 @@ export const ProtectedRoute = ({ children }) => {
         if (userData) {
           dispatch(setUser(userData));
         } else {
-          navigate("/login");
+          navigate("/");
         }
       });
     }
