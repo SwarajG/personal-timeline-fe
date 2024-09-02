@@ -1,8 +1,7 @@
 import { Sidebar } from "flowbite-react";
 import {
   MdDashboard,
-  MdOutlineInbox,
-  MdPerson
+  MdOutlineInbox
 } from "react-icons/md";
 
 export default function SideBarComponent() {
@@ -15,9 +14,6 @@ export default function SideBarComponent() {
           </Sidebar.Item>
           <Sidebar.Item href="#" icon={MdOutlineInbox} label="3">
             Inbox
-          </Sidebar.Item>
-          <Sidebar.Item href="#" icon={MdPerson}>
-            Users
           </Sidebar.Item>
         </Sidebar.ItemGroup>
       </Sidebar.Items>

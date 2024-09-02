@@ -4,7 +4,9 @@ export const { actions, reducer } = createSlice({
   name: 'globalData',
   initialState: {
     user: null,
-    isDarkModeOn: false
+    isDarkModeOn: false,
+    userList: [],
+    tags: []
   },
   reducers: {
     setUser: (state, { payload }) => {
@@ -12,10 +14,16 @@ export const { actions, reducer } = createSlice({
     },
     setIsDarkModeOn: (state, { payload }) => {
       state.isDarkModeOn = payload;
+    },
+    updateUserData: (state, { payload }) => {
+      state.userList.push(payload);
+    },
+    setTags: (state, { payload }) => {
+      state.tags = payload;
     }
   },
 })
 
-export const { setUser, setIsDarkModeOn } = actions
+export const { setUser, setIsDarkModeOn, updateUserData, setTags } = actions
 
 export default reducer;

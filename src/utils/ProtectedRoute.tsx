@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchUserProfile } from "../api";
 import { getUser } from "../globalSlice/selector";
-import { setUser } from "../globalSlice/appSlice";
+import { setUser, updateUserData } from "../globalSlice/appSlice";
 
 export const ProtectedRoute = ({ children }) => {
   const dispatch = useDispatch();
@@ -15,6 +15,7 @@ export const ProtectedRoute = ({ children }) => {
       fetchUserProfile().then((userData) => {
         if (userData) {
           dispatch(setUser(userData));
+          dispatch(updateUserData({ id: userData.id, picture: userData.picture }));
         } else {
           navigate("/");
         }

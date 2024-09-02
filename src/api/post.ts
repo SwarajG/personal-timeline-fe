@@ -3,19 +3,22 @@ import axios, { AxiosResponse } from 'axios';
 export default async function createPost(form) {
   const file = form.get('media');
   const text = form.get('text');
+  const tags = form.get('tags');
   const response: AxiosResponse = await axios.post('/v1/posts', {
     text,
-    file
+    file,
+    tags
   }, {
     headers: {
       'Content-Type': 'multipart/form-data'
     }
   });
-  return response.data.data
+  console.log('response: ', response);
+  return response.data.post;
 }
 
-export async function getPostsByUser() {
-  const response: AxiosResponse = await axios.get('/v1/posts');
+export async function getPostsByUser(offset) {
+  const response: AxiosResponse = await axios.get(`/v1/posts?offset=${offset}&limit=10`);
   return response.data.data;
 }
 
